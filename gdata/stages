@@ -59,13 +59,15 @@ Boss ??: Black Belt Laura
 					EGYPT
 Stage ??: Traffic JAM
 Boss ??: Lost Child Chiaki
-Stage ??: Rafting Vacation on the Nile
+Stage ??: Nile Raft Tour
 Boss ??: Pharao Kordanhio, The Snake Charmer // Vengeful Basilisk of the Nile // Kordanhio, Professional Swimmer
-                    GERMANY
+					GERMANY
 Boss ??: Clocktower
-(Boss ?? <loyalty,johanna>: Chessmaster Octagon)
+(Boss ?? <loyalty,joanna>: Oktagons Deep Sea Lab // Chessmaster Octagon) ??in germany
 Stage ??: Wunderzirkus Chaosland
-Boss ??: Fritz von Feuersforst
+Boss ??: Mademoiselle Regina // Eisprinzessin Regina
+Boss ??: Friedrich von Feuersforst // Flame Fiesting Fiend Friedrich
+(Boss ??: Der Zirkusdirektor) !!as punishment boss. ??name
 (Stage ??: Luftschiff Spielzeugparadies)
 (Boss ?? <loyalty,april>: Prof. Dr. Dr. E. B. Kindsgesicht)
 					NEPAL
@@ -85,7 +87,7 @@ Boss ??: Orbital Artyom // Artyom, the Astral Adventurer
 Stage ??: Free Fall to Reality
 Stage ??: Crossdrive through the Woods
 Boss ??: A Hutt with Feet // Grandmother Yaga, the Noonday Witch // Childfeaster Yaga
-                    FINLAND
+					FINLAND
 Boss ??: Blinded By Disgrace // Reborn By Failure // Redeemed Student of the Twin Blades || The Enlightened One
 Boss ??: Aurora Minerva // Minerva, Seeker of Wisdom // Minerva, She Who Knows Everything
 					GREENLAND
@@ -94,14 +96,17 @@ Boss ??: The Sad Sailor // Regret
 					CHINA
 Stage ??: Wild Motorcycle Ride through the Streets of Hongkong
 Boss ??: Dustdragon // Endzeit Phoenix // True Endzeit, The Sun // Final Endzeit, The Phoenix' Ashes
-					// Nameless Chemist of the Apocalypse
+			// Nameless Chemist of the Apocalypse
 					JAPAN
+Stage ??: Hornet Squadron
 Stage ??: Tokyo Emergency
-Boss ??: Black Label Arcade // White Label Arcade // (Red Label Arcade) // Cottonmind // Dnimnottoc
+Boss ??: Black Label Arcade // White Label Arcade // (Disco Label Arcade) // (Red Label Arcade) // Cottonmind
+			// Dnimnottoc
 Stage ??: Styx Residence
 Boss ??: Roshisenpai & Onikochan, the Twin Blades // Lonely Blade, Awakened Deamon || Lonely Blade, Ruthless Killer
 Boss ??: YOMI, The East Wall // YOMI, The South Wall // YOMI, The West Wall // YOMI, The North Wall // Yomisensei
-			// (Yomisama, The Beautiful Death - True Final Form) || (Yomisama, The Disappointed - Corrupted Final Form)
+			// (Yomisama, The Beautiful Death - True Final Form)
+			|| (Yomisama, The Disappointed - Corrupted Final Form)
 
 Total Stages:
-Total Bosses: 27 (+5)
+Total Bosses: 28 (+6)
