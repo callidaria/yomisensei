@@ -327,6 +327,6 @@ void Frame::load_controllers()
 */
 void Frame::kill_controllers()
 {
-	for (int i=0;i<m_gc.size();i++) SDL_GameControllerClose(m_gc.at(i));
+	for (int i=0;i<m_gc.size();i++) SDL_GameControllerClose(m_gc[i]);
 	m_gc.clear(),xb.clear();
 }

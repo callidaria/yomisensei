@@ -92,7 +92,7 @@ void BulletSystem::delta_bltPos(uint8_t cluster,uint32_t index,glm::vec2 dPos)
 void BulletSystem::delta_fDir(uint8_t cluster)
 {
 	// FIXME: static update loop counter
-	for (int i=0;i<countCaps.at(cluster);i++)
+	for (int i=0;i<countCaps[cluster];i++)
 		m_rI->add_aOffset(cluster,i,dirs[cluster][i]*(float)m_frame->time_delta);
 }
 

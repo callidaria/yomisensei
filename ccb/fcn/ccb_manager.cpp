@@ -93,10 +93,10 @@ void CCBManager::dev_console(bool &running,bool &dactive)
 
 		// move sprite according to mouse vector delta
 		glm::vec2 deltamv = glm::vec2(m_frame->mouse.mxfr-mlf.x,m_frame->mouse.myfr-mlf.y);
-		int ti = index.at(i_lv)+i_rf;
-		m_r2d->sl.at(ti).model
-				= glm::translate(m_r2d->sl.at(ti).model,glm::vec3(deltamv.x,deltamv.y,0));
-		linpr.at(i_lv).m_pos.at(i_rf) += deltamv;
+		int ti = index[i_lv]+i_rf;
+		m_r2d->sl[ti].model
+				= glm::translate(m_r2d->sl[ti].model,glm::vec3(deltamv.x,deltamv.y,0));
+		linpr[i_lv].m_pos[i_rf] += deltamv;
 		mlf = glm::vec2(m_frame->mouse.mxfr,m_frame->mouse.myfr);
 	}
 
@@ -110,10 +110,10 @@ void CCBManager::dev_console(bool &running,bool &dactive)
 
 		// scale sprite according to mouse movement vector length
 		deltascl += (m_frame->mouse.myfr-mlf.y)*0.001f;
-		int ti = index.at(i_lv)+i_rf;
-		m_r2d->sl.at(ti).scale_arbit(deltascl,deltascl);
-		linpr.at(i_lv).m_width.at(i_rf)=tmp_wscale*deltascl;
-		linpr.at(i_lv).m_height.at(i_rf)=tmp_hscale*deltascl;
+		int ti = index[i_lv]+i_rf;
+		m_r2d->sl[ti].scale_arbit(deltascl,deltascl);
+		linpr[i_lv].m_width[i_rf]=tmp_wscale*deltascl;
+		linpr[i_lv].m_height[i_rf]=tmp_hscale*deltascl;
 		mlf = glm::vec2(m_frame->mouse.mxfr,m_frame->mouse.myfr);
 	}
 
@@ -141,10 +141,10 @@ void CCBManager::dev_console(bool &running,bool &dactive)
 			} args.push_back(tmp);
 
 			// program termination recognition
-			if (args.at(0)=="exit") running = false;
+			if (args[0]=="exit") running = false;
 
 			// sprite movement recognition
-			else if (args.at(0)=="mv_sprite") {
+			else if (args[0]=="mv_sprite") {
 
 				// check if valid argument list size
 				if (args.size()!=3)
@@ -156,12 +156,12 @@ void CCBManager::dev_console(bool &running,bool &dactive)
 
 					// save argument values & origin mouse coordinates to calculate delta from
 					mlf = glm::vec2(m_frame->mouse.mxfr,m_frame->mouse.myfr);
-					i_lv = std::stoi(args.at(1));i_rf = std::stoi(args.at(2));
+					i_lv = std::stoi(args[1]);i_rf = std::stoi(args[2]);
 				}
 			}
 
 			// sprite scaling recognition
-			else if (args.at(0)=="scl_sprite") {
+			else if (args[0]=="scl_sprite") {
 
 				// check if valid argument list size
 				if (args.size()!=3)
@@ -173,21 +173,21 @@ void CCBManager::dev_console(bool &running,bool &dactive)
 
 					// save delta scaling variables & input arguments
 					mlf = glm::vec2(m_frame->mouse.mxfr,m_frame->mouse.myfr);
-					i_lv = std::stoi(args.at(1));i_rf = std::stoi(args.at(2));
-					tmp_wscale = linpr.at(i_lv).m_width.at(i_rf);
-					tmp_hscale = linpr.at(i_lv).m_height.at(i_rf);
+					i_lv = std::stoi(args[1]);i_rf = std::stoi(args[2]);
+					tmp_wscale = linpr[i_lv].m_width[i_rf];
+					tmp_hscale = linpr[i_lv].m_height[i_rf];
 				}
 			}
 
 			// request to save changes to .ccb files
-			else if (args.at(0)=="write_changes") {
-				for (int i=0;i<linpr.size();i++) linpr.at(i).write_level();
+			else if (args[0]=="write_changes") {
+				for (int i=0;i<linpr.size();i++) linpr[i].write_level();
 				ct.add("changes written",glm::vec2(750,console_y));
 			}
 
 			// identify all other commands as invalid
 			else {
-				std::string errline = "invalid command: \""+args.at(0)+"\"";
+				std::string errline = "invalid command: \""+args[0]+"\"";
 				ct.add(errline.c_str(),glm::vec2(750,console_y));
 			}  // FIXME: make a dynamically changable command list with function jmp not branching
 

@@ -80,19 +80,24 @@ uint16_t CCBLInterpreter::load_level()
 */
 void CCBLInterpreter::write_level()
 {
+	// write mesh positions
 	std::ofstream lvfile(lvpath,std::ios::out);
 	for (int i=0;i<m_pos.size();i++) {
 		std::stringstream lvbuff;
-		lvbuff <<"sprite: "<<m_pos.at(i).x<<' '<<m_pos.at(i).y<<' '
-			<<m_width.at(i)<<' '<<m_height.at(i)<<' '<<m_tex.at(i)<<'\n';
+		lvbuff << "sprite: " << m_pos[i].x << ' ' << m_pos[i].y << ' '
+				<< m_width[i] << ' ' << m_height[i] << ' ' << m_tex[i] << '\n';
 		lvfile << lvbuff.str();
-	} for (int i=0;i<a_pos.size();i++) {
+	}
+
+	// write animation positions
+	for (int i=0;i<a_pos.size();i++) {
 		std::stringstream lvbuff;
-		lvbuff <<"anim: "<<a_pos.at(i).x<<' '<<a_pos.at(i).y<<' '
-			<<a_width.at(i)<<' '<<a_height.at(i)<<' '<<a_tex.at(i)<<' '
-			<<a_row.at(i)<<' '<<a_column.at(i)<<' '<<a_frames.at(i)<<' '<<a_ts.at(i)<<'\n';
+		lvbuff << "anim: " << a_pos[i].x << ' ' << a_pos[i].y << ' '
+				<< a_width[i] << ' ' << a_height[i] << ' ' << a_tex[i] << ' '
+				<< a_row[i] << ' ' << a_column[i] << ' ' << a_frames[i] << ' ' << a_ts[i] << '\n';
 		lvfile << lvbuff.str();
-	} lvfile.close();
+	}
+	lvfile.close();
 }
 
 /*

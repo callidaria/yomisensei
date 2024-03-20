@@ -69,7 +69,7 @@ Cubemap::Cubemap(std::vector<const char*> tp) // !!description && maybe stack ?
 	glBindTexture(GL_TEXTURE_CUBE_MAP,irradiance_map);
 	int32_t width,height;
 	for (int i=0;i<tp.size();i++) {
-		unsigned char* image = stbi_load(tp.at(i),&width,&height,0,STBI_rgb); // ??alpha needed
+		unsigned char* image = stbi_load(tp[i],&width,&height,0,STBI_rgb); // ??alpha needed
 		glTexImage2D(GL_TEXTURE_2D,0,GL_RGB,width,height,0,GL_RGB,GL_UNSIGNED_BYTE,image);
 		stbi_image_free(image);
 	} Toolbox::set_cubemap_texture_parameters();

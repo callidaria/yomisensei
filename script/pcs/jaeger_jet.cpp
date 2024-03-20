@@ -56,7 +56,7 @@ void JaegerJet::update()
 	// run requested shot type or idle
 	uint8_t sidx = ((m_ccbf->iMap->input_val[InputID::WIDE]&&!m_ccbf->iMap->input_val[InputID::FOCUS])+2
 			* m_ccbf->iMap->input_val[InputID::FOCUS])*(m_ccbf->frame->time_delta>.1f);
-	rng_flib.at(sidx)(m_ccbf->bSys,treg);
+	rng_flib[sidx](m_ccbf->bSys,treg);
 
 	// TODO: bombs
 	// TODO: shot modes and spawn

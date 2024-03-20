@@ -79,8 +79,8 @@ void Renderer2D::load(float &progress,float pseq)
 	s2d.compile2d("shader/vertex2d.shader","shader/fragment2d.shader");
 
 	// load textures
-	for (int i=0;i<sl.size();i++) sl.at(i).texture(),progress += ptarget;
-	for (int i=0;i<al.size();i++) al.at(i).texture(),progress += ptarget;
+	for (int i=0;i<sl.size();i++) sl[i].texture(), progress += ptarget;
+	for (int i=0;i<al.size();i++) al[i].texture(), progress += ptarget;
 	s2d.upload_int("tex",0);
 
 	// coordinate system
